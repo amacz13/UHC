@@ -1,0 +1,20 @@
+name: UHC
+version: 0.1.0
+main: fr.amacz13.uhc.Main
+load: STARTUP
+author: amacz13
+depend:
+  - TTA
+commands:
+  quhc:
+    description: Commande principale
+    usage: /quhc <start|cancel|stop>
+  revive:
+    description: Réssucite un joueur
+    usage: /revive <joueur>
+  heal:
+    description: Soigne l'ensemble des joueurs
+    usage: /heal
+  lag:
+    description: Obtenir des informations sur la santé du serveur
+    usage: /lag

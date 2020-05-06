@@ -1,4 +1,6 @@
 package fr.amacz13.uhc.events;
 
-public class Players {
+import org.bukkit.event.Listener;
+
+public class Players implements Listener {
 }

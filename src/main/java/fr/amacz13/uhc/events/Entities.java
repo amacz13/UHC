@@ -1,4 +1,6 @@
 package fr.amacz13.uhc.events;
 
-public class Entities {
+import org.bukkit.event.Listener;
+
+public class Entities implements Listener {
 }

@@ -54,10 +54,12 @@ public class Team {
         if (isPlayerInTeam(player)) this.players.remove(player);
         GameStateManager gms = GameStateManager.getInstance();
         switch (gms.getGameState()){
-            case WAITING, LAUNCHING:
+            case WAITING:
+            case LAUNCHING:
                 if (this.players.size() == 0) this.status = TeamStatus.EMPTY;
                 break;
-            case INGAME, ENDING:
+            case INGAME:
+            case ENDING:
                 if (this.players.size() == 0) this.status = TeamStatus.ELIMINATED;
                 break;
         }

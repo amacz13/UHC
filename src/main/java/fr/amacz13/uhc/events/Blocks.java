@@ -1,4 +1,7 @@
 package fr.amacz13.uhc.events;
 
-public class Blocks {
+import org.bukkit.event.Listener;
+
+public class Blocks implements Listener {
+
 }
