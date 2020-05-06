@@ -1,5 +1,6 @@
 language: java
+dist: bionic
 jdk:
-  - oraclejdk8
+  - openjdk8
 
 script: "mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V && mvn package"
