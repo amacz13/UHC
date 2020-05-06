@@ -1,5 +1,6 @@
 package fr.amacz13.uhc.teams;
 
+import fr.amacz13.uhc.state.GameStateManager;
 import fr.amacz13.uhc.utilities.ColorConverter;
 import org.bukkit.ChatColor;
 import org.bukkit.DyeColor;
@@ -51,6 +52,15 @@ public class Team {
 
     public void removePlayer(Player player){
         if (isPlayerInTeam(player)) this.players.remove(player);
+        GameStateManager gms = GameStateManager.getInstance();
+        switch (gms.getGameState()){
+            case WAITING, LAUNCHING:
+                if (this.players.size() == 0) this.status = TeamStatus.EMPTY;
+                break;
+            case INGAME, ENDING:
+                if (this.players.size() == 0) this.status = TeamStatus.ELIMINATED;
+                break;
+        }
     }
 
     public boolean isPlayerInTeam(Player player) {
